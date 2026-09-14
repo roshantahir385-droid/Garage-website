@@ -1,0 +1,8 @@
+# ⚠️ Replace https://www.yourdomain.com below with your real production
+# domain before launch — see index.html for the matching canonical URL
+# placeholder.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.yourdomain.com/sitemap.xml

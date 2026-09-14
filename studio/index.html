@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07080B" />
+
+    <!-- ⚠️ Replace https://www.yourdomain.com everywhere below (canonical,
+         og:url, structured data) with your real production domain before
+         launch — it must match public/robots.txt and public/sitemap.xml. -->
+    <link rel="canonical" href="https://www.yourdomain.com/" />
+
+    <title>Studio — Build. Manage. Grow. | Web Development, Design & Digital Marketing</title>
+    <meta
+      name="description"
+      content="I build, manage and grow digital businesses — web development, design, and digital marketing under one roof. One point of contact, from launch through ongoing growth."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Your Name" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Studio" />
+    <meta property="og:title" content="Studio — Build. Manage. Grow." />
+    <meta
+      property="og:description"
+      content="I build, manage and grow digital businesses — web development, design, and digital marketing under one roof."
+    />
+    <meta property="og:url" content="https://www.yourdomain.com/" />
+    <meta property="og:image" content="https://www.yourdomain.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Studio — Build. Manage. Grow." />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Studio — Build. Manage. Grow." />
+    <meta
+      name="twitter:description"
+      content="I build, manage and grow digital businesses — web development, design, and digital marketing under one roof."
+    />
+    <meta name="twitter:image" content="https://www.yourdomain.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Studio — Build. Manage. Grow." />
+
+    <!-- Icons / brand mark -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=general-sans@400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data: Person + ProfessionalService. Update the values
+         below (name, sameAs profiles, address/areaServed if relevant)
+         to match config/site.ts before launch — this is kept in sync
+         by hand since it's outside the React bundle. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Studio",
+        "url": "https://www.yourdomain.com/",
+        "image": "https://www.yourdomain.com/og-image.png",
+        "description": "Web development, website design, app management, social media management and marketing, and digital marketing services — one point of contact from build through ongoing growth.",
+        "email": "growthavenueco1@gmail.com",
+        "areaServed": "Worldwide",
+        "sameAs": [
+          "https://instagram.com/yourhandle",
+          "https://linkedin.com/in/yourhandle",
+          "https://x.com/yourhandle"
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Your Name",
+          "jobTitle": "Digital Builder & Growth Partner"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

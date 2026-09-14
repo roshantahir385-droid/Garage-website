@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-void text-ink font-body antialiased;
+    background-image: radial-gradient(
+        60% 50% at 50% 0%,
+        rgba(78, 107, 255, 0.08) 0%,
+        rgba(7, 8, 11, 0) 60%
+      ),
+      linear-gradient(180deg, #07080b 0%, #0b1120 55%, #07080b 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: rgba(78, 107, 255, 0.35);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #4e6bff;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .container-cinematic {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Manual "prose" styling for legal page content — no typography
+     plugin is installed, so headings/paragraphs/lists inside
+     .legal-prose are styled by hand to match the site's dark theme. */
+  .legal-prose h2 {
+    @apply mb-3 mt-10 text-xl font-semibold text-ink first:mt-0;
+  }
+
+  .legal-prose h3 {
+    @apply mb-2 mt-6 text-base font-semibold text-ink;
+  }
+
+  .legal-prose p {
+    @apply mb-4 text-sm leading-relaxed text-ink-muted;
+  }
+
+  .legal-prose ul {
+    @apply mb-4 ml-5 list-disc space-y-2 text-sm leading-relaxed text-ink-muted;
+  }
+
+  .legal-prose li::marker {
+    color: rgba(154, 161, 174, 0.6);
+  }
+
+  .legal-prose strong {
+    @apply font-medium text-ink;
+  }
+
+  .legal-prose a {
+    @apply text-accent-soft underline underline-offset-4 hover:text-accent;
+  }
+
+  /* Base state for elements animated in by useScrollReveal / GSAP.
+     Kept as a plain, reduced-motion-safe CSS fallback in case JS
+     animation hasn't attached yet, or is disabled. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .no-js .reveal,
+  .reveal.reveal-ready {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Crossfade used when the services backdrop swaps environments. */
+.environment-fade {
+  animation: fadein 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* Kill the ambient CSS-only loops used by the services environments
+     and portfolio previews — same policy as the GSAP/3D motion above. */
+  .animate-drift-y,
+  .animate-drift-y-sm,
+  .animate-tilt-y,
+  .animate-pulse-soft,
+  .animate-orbit-slow,
+  .animate-orbit-slower,
+  .animate-rise,
+  .animate-spin-slow,
+  .animate-spin-slower,
+  .environment-fade {
+    animation: none !important;
+  }
+}
